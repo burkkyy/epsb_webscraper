@@ -5,3 +5,6 @@ Make sure to have required libraries by running:\
 
 To run program:\
 `python get_images.py`
+
+Images fetched are stored in img/\
+Ignore data/
