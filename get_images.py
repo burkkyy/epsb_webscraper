@@ -13,7 +13,7 @@ images = 'img/'
 def download_html(url, filename):
     req = re.get(url, stream=True)
     req.raise_for_status()
-    print(f"\033[91m[STATUS]\033[0m Writing data collected from {url[12:]} to {filename}")
+    print(f"\033[94m[STATUS]\033[0m writing data collected from {url[12:]} to {filename}")
     with open(filename, 'wb') as f:
         for chunk in req.iter_content(chunk_size=50000):
             f.write(chunk)
@@ -98,4 +98,3 @@ if __name__ == '__main__':
     if(os.path.exists(school_list_file)): print("\033[94m[STATUS]\033[0m parse_html_for_links is already done")
     else: parse_html_for_links(html, school_list_file)
     download_images_from_links(school_list_file, images)
-
